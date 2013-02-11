@@ -1,7 +1,9 @@
 # Checkbot
 ## A helpful robot to check your commits and make sure you don't look silly.
 
-#### sample run
+
+Here's a sample
+
 ```
 
   _._          _____
@@ -11,9 +13,9 @@
 
 Checkbot is checking staged changes...
 
-! You staged a '.css' file without staging a '.less' file.
-  Did you mean to do that?
-  (CSS files should not be edited directly, LESS files should be edited, then compiled into CSS, with both being checked in.)
+! You staged a '.css' file without staging a '.less' file.   Did you mean to do
+that?   (CSS files should not be edited directly, LESS files should be edited,
+then compiled into CSS, with both being checked in.)
 
 ! You staged a '.en.yml' file without staging 'defaults.js'.
   Did you mean to do that?
@@ -37,7 +39,8 @@ Checkbot is checking staged changes...
 4-
 5-}
 
-~ You staged files in 'public/stylesheets', you should consider checking your changes across supported browsers, like IE.
+~ You staged files in 'public/stylesheets', you should consider checking your
+~ changes across supported browsers, like IE.
 
 [~/dev/master] <@master> $
 
