@@ -1,3 +1,5 @@
+require 'shellwords'
+
 class Checkbot
 
   attr_accessor :paths, :files, :names, :extensions, :error_count
@@ -98,7 +100,7 @@ class Checkbot
 
   def parse_git_status
     status_lines = `git status -z --porcelain`.split("\x00") #why are lines terminated with nulls?
-    staged_lines = status_lines.delete_if{|x| x[0] == " "}.delete_if{|x| x[0] == "?"}
+    staged_lines = status_lines.delete_if{|x| x[0] == " "}.delete_if{|x| x[0] == "?"}.delete_if{|x| x[0] == "D"}
     filenames = staged_lines.map{|x| x[3..-1]}
   end
 
@@ -138,16 +140,18 @@ class StagedFile
   attr_accessor :path, :name, :ext
 
   def initialize(path)
-    @path = path
+    @path = Shellwords.shellescape(path)
     @name = path_name(path)
     @ext = path_ext(path)
   end
 
   def grep(s)
+    s = Shellwords.shellescape(s)
     return `grep -n -C3 '#{s}' #{path}`
   end
 
   def grep_count(s)
+    s = Shellwords.shellescape(s)
     return `git diff --unified=0 --cached -p #{path} | grep -c '#{s}'`
   end
 
