@@ -1,8 +1,9 @@
 # Checkbot
 ## A helpful robot to check your commits and make sure you don't look silly.
 
+#### (this is not a subsitute for reviewing your commits manually! its just a double check!)
 
-Here's a sample
+Here's a sample...
 
 ```
 [~/dev/master] <@master> $ ruby ~/checkbot.rb
