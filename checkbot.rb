@@ -100,7 +100,7 @@ class Checkbot
 
   def parse_git_status
     status_lines = `git status -z --porcelain`.split("\x00") #why are lines terminated with nulls?
-    staged_lines = status_lines.delete_if{|x| x[0] == " "}.delete_if{|x| x[0] == "?"}.delete_if{|x| x[0] == "D"}
+    staged_lines = status_lines.delete_if{|x| x[0] == " " || x[0] == "?" || x[0] == "D"}
     filenames = staged_lines.map{|x| x[3..-1]}
   end
 
