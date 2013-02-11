@@ -5,6 +5,7 @@
 Here's a sample
 
 ```
+[~/dev/master] <@master> $ ruby ~/checkbot.rb
 
   _._          _____
  [O+O]        |   //|
@@ -14,8 +15,8 @@ Here's a sample
 Checkbot is checking staged changes...
 
 ! You staged a '.css' file without staging a '.less' file.   Did you mean to do
-that?   (CSS files should not be edited directly, LESS files should be edited,
-then compiled into CSS, with both being checked in.)
+  that?   (CSS files should not be edited directly, LESS files should be edited,
+  then compiled into CSS, with both being checked in.)
 
 ! You staged a '.en.yml' file without staging 'defaults.js'.
   Did you mean to do that?
@@ -40,7 +41,7 @@ then compiled into CSS, with both being checked in.)
 5-}
 
 ~ You staged files in 'public/stylesheets', you should consider checking your
-~ changes across supported browsers, like IE.
+  changes across supported browsers, like IE.
 
 [~/dev/master] <@master> $
 
